@@ -1,6 +1,7 @@
-import express from 'express';
-import morgan from 'morgan';
-import router from './routes/customerRoutes.js';
+require('dotenv').config()
+const express = require('express') 
+const morgan = require('morgan')
+const router = require('./routes/customerRoutes.js'); 
 
 const app = express();
 
@@ -24,4 +25,4 @@ const defaultRouter = (req, res, next) => {
 
 app.use('/api/v1/customers', router);
 
-export default app;
+module.exports = app;

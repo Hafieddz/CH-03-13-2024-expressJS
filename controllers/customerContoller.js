@@ -1,8 +1,4 @@
-import fs from 'fs';
-import { fileURLToPath } from 'url'
-import path from 'path'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const fs = require('fs');
 
 const customers = JSON.parse(fs.readFileSync(`${__dirname}/../data/data.json`, 'utf-8'));
 
@@ -91,4 +87,4 @@ const createCustomer = (req, res) => {
     });
 }
 
-export { createCustomer, getCustomer, getCustomers, deleteCustomer, updateCustomer }
+module.exports =  { createCustomer, getCustomer, getCustomers, deleteCustomer, updateCustomer }
